@@ -1,0 +1,92 @@
+[
+  {
+    "category": "HAIR",
+    "services": [
+      {
+        "id": 1,
+        "serviceName": "clean save",
+        "price": 123,
+        "description": "use foam",
+        "duration": 60,
+        "active": true
+      },
+      {
+        "id": 2,
+        "serviceName": "HairCut",
+        "price": 123,
+        "description": "without wash",
+        "duration": 90,
+        "active": true
+      },
+      {
+        "id": 3,
+        "serviceName": "Beard Look",
+        "price": 123,
+        "description": "with trimer",
+        "duration": 30,
+        "active": true
+      },
+      {
+        "id": 4,
+        "serviceName": "Baby HairCut",
+        "price": 123,
+        "description": "upto 11 year",
+        "duration": 60,
+        "active": true
+      },
+      {
+        "id": 5,
+        "serviceName": "Hair color",
+        "price": 123,
+        "description": "with wash",
+        "duration": 30,
+        "active": true
+      },
+      {
+        "id": 6,
+        "serviceName": "Beard color",
+        "price": 123,
+        "description": "with wash",
+        "duration": 30,
+        "active": true
+      },
+      {
+        "id": 7,
+        "serviceName": "Blow Dry",
+        "description": "Hair Setting",
+        "duration": 30,
+        "price": 123,
+        "active": true
+      }
+    ]
+  },
+  {
+    "category": "SKIN",
+    "services": [
+      {
+        "id": 8,
+        "serviceName": "Face MAssage",
+        "description": "Pramote Health",
+        "duration": 30,
+        "price": 170,
+        "active": true
+      },
+      {
+        "id": 9,
+        "serviceName": "Srub",
+        "description": "Remove dead screen",
+        "duration": 30,
+        "price": 270,
+        "active": true
+      },
+      {
+        "id": 10,
+        "serviceName": "Facial",
+        "description": "improves blood circulation",
+        "duration": 30,
+        "price": 599,
+        "active": true
+      }
+    ]
+  }
+]
