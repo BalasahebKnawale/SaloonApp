@@ -161,7 +161,7 @@ export const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to="/contact"
+                  to="/contactus"
                   className={({ isActive }) =>
                     isActive ? activeClass : inActiveClass
                   }

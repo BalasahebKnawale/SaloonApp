@@ -7,6 +7,7 @@ import PrivateRoute from "../components/PrivateRoute";
 import App from "../App"; // Assuming App is your layout component
 import Admin from "../pages/Admin";
 import Home from "../pages/Home";
+import ContactUs from "../pages/ContactUs ";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +19,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/services",
-        element: <ServiceList />,
+        path: "/contactus",
+        element: <ContactUs />,
       },
       {
         element: <PrivateRoute role="user" />,
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
           {
             path: "/book",
             element: <BookingForm />,
+          },
+          {
+            path: "/services",
+            element: <ServiceList />,
           },
         ],
       },
