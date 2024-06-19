@@ -5,7 +5,7 @@ import { useCart } from "../context/CartContext";
 import moment from "moment/moment";
 import { end_time, slotDuration, start_time } from "../CONSTANTS";
 
-import { equalTo, get, orderByChild, query, ref } from "firebase/database";
+import { query } from "firebase/database";
 import { addDoc, collection, getDocs, where } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { db } from "../firebase/firebase";
@@ -193,7 +193,7 @@ export const BookingForm = () => {
   }, []);
 
   return (
-    <main className="flex flex-col items-center justify-items-center  bg-gray-100 dark:bg-gray-600 overflow-x-scroll">
+    <main className="flex flex-col items-center justify-items-center  bg-gray-100 dark:bg-gray-600 overflow-y-scroll">
       <div className="max-w-sm m-auto w-5/6 ">
         <h3 className="mb-6 text-center text-2xl font-bold text-black dark:text-white">
           Book your slot
