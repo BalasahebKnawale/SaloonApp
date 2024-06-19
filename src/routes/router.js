@@ -6,6 +6,7 @@ import { SignUp } from "../pages/SignUp";
 import PrivateRoute from "../components/PrivateRoute";
 import App from "../App"; // Assuming App is your layout component
 import Admin from "../pages/Admin";
+import Home from "../pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
+        element: <Home />,
+      },
+      {
+        path: "/services",
         element: <ServiceList />,
       },
       {

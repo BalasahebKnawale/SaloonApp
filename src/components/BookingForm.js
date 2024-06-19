@@ -186,7 +186,7 @@ export const BookingForm = () => {
     if (!service || service.length < 1) {
       toast.error("Please select a service", {
         onClose: () => {
-          navigate("/");
+          navigate("/services");
         },
       });
     }
