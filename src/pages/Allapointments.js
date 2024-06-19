@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BookingCart } from "../components/BookingCart";
 import { useApi } from "../hooks/useApi";
+import moment from "moment";
 
 export function Allapointments() {
   const [bookingDate, setBookingDate] = useState("");
@@ -73,8 +74,8 @@ export function Allapointments() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-items-center  bg-gray-100 dark:bg-gray-600  overflow-y-scroll">
-      <div className="max-w-sm  w-5/6 ">
+    <main className="flex flex-col items-center justify-items-center bg-gray-100 dark:bg-gray-600 overflow-y-scroll">
+      <div className="max-w-6xl w-5/6">
         <div className="mb-6 text-center text-2xl font-bold text-black dark:text-white">
           All Bookings
         </div>
@@ -82,31 +83,25 @@ export function Allapointments() {
           {Object.entries(groupedBookings).map(([selectedDate, bookings]) => (
             <div key={selectedDate} className="mb-6">
               <div
-                className="mb-2 text-lg font-bold text-black  dark:text-white hover:cursor-pointer border-b-2 border-gray-300 dark:border-gray-500 "
+                className="mb-2 text-lg font-bold text-black dark:text-white hover:cursor-pointer border-b-2 border-gray-300 dark:border-gray-500"
                 onClick={() => bookingDayHandler(selectedDate, bookings)}
               >
                 {selectedDate}
               </div>
-              {bookingDate === selectedDate &&
-                bookings.map((booking) => (
-                  <BookingCart
-                    key={booking.id}
-                    booking={booking}
-                    bgColor={
-                      bgColors[bookings.indexOf(booking) % bgColors.length]
-                    }
-                  />
-                ))}
+              {bookingDate === selectedDate && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-around">
+                  {bookings.map((booking, index) => (
+                    <BookingCart
+                      key={booking.id}
+                      booking={booking}
+                      bgColor={bgColors[index % bgColors.length]}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
-        {/* {allbookings.map((booking, index) => (
-          <BookingCart
-            key={booking.id}
-            booking={booking}
-            bgColor={bgColors[index % bgColors.length]}
-          />
-        ))} */}
       </div>
     </main>
   );

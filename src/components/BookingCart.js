@@ -4,9 +4,9 @@ import React from "react";
 export const BookingCart = ({ booking, bgColor }) => {
   return (
     <div
-      className={`flow-root first-line:w-full m-auto ${bgColor} dark:${bgColor} rounded-lg mb-6 dark:text-black`}
+      className={`p-4 ${bgColor} dark:${bgColor} rounded-lg mb-6 dark:text-black`}
     >
-      <div className="p-4 ">
+      <div>
         <div className="font-semibold">
           <span className="font-bold">Name: </span>
           {booking.name}

@@ -26,9 +26,21 @@ export const OAuth = () => {
           role: "user",
           timestamp: serverTimestamp(),
         });
+        navigate("/");
+      } else {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          console.log("Document data:", docSnap.data());
+          if (docSnap.data().role === "user") {
+            navigate("/");
+          } else {
+            navigate("/appointments");
+          }
+        } else {
+          console.log("No such user found!");
+        }
       }
-
-      navigate("/");
     } catch (error) {
       toast.error("Could not authorize with Google");
     }
