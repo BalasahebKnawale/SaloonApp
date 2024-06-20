@@ -16,7 +16,7 @@ export const BookingForm = () => {
   const [mobile, setMobile] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState([]);
-  const [bookingDetails, setBookingDetails] = useState(null);
+
   const [serviceEndsat, setServiceEndsat] = useState(null);
   const [serviceStartsat, setServiceStartsat] = useState(null);
 
@@ -74,7 +74,7 @@ export const BookingForm = () => {
       });
     }
 
-    setBookingDetails(bookingData);
+
     console.log(bookingData);
   };
   const setTimehandler = (slot, totalTime) => {
