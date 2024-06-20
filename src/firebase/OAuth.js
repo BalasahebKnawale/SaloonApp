@@ -42,7 +42,7 @@ export const OAuth = () => {
         }
       }
     } catch (error) {
-      toast.error("Could not authorize with Google");
+      toast.error("Could not authorize with Google", error);
     }
   }
   return (
