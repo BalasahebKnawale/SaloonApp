@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BookingCart } from "../components/BookingCart";
 import { useApi } from "../hooks/useApi";
-import moment from "moment";
+
 
 export function Allapointments() {
   const [bookingDate, setBookingDate] = useState("");
@@ -47,6 +47,7 @@ export function Allapointments() {
       }
     };
     getAllBookings();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {

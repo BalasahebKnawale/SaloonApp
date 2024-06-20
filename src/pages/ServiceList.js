@@ -23,7 +23,6 @@ export const ServiceList = () => {
         </div>
         <div className="flow-root  w-full m-auto p-4 bg-white dark:bg-gray-500 dark:text-gray-100 rounded-lg border-2 over">
           <ul
-            role="list"
             className="divide-y divide-gray-200 dark:divide-gray-700"
           >
             {servicesList.map((category) => (
@@ -36,7 +35,7 @@ export const ServiceList = () => {
                     <img
                       className="w-8 h-8 rounded-full"
                       src={Logo}
-                      alt="Bonnie image"
+                      alt="Bonnie"
                     />
                   </div>
                   <div className="flex-1 min-w-0 ms-4">
