@@ -34,11 +34,11 @@ export const BookingForm = () => {
       !selectedDate ||
       selectedTime === ""
     ) {
-      alert("Please fill in all fields.");
+      toast.error("Please fill in all fields.");
       return;
     }
     if (!isValidMobileNumber(mobile)) {
-      alert("Please enter a valid 10-digit mobile number.");
+      toast.error("Please enter a valid 10-digit mobile number.");
       return;
     }
     bookinHandler(e);
@@ -202,7 +202,7 @@ export const BookingForm = () => {
         </h3>
         <form
           onSubmit={handleBookService}
-          className="w-full m-auto p-4 bg-white dark:bg-gray-500 dark:text-gray-100 rounded-lg border-2"
+          className="w-full m-auto p-4 bg-white dark:bg-gray-500 dark:text-gray-100 rounded-lg border-2 mb-10 "
         >
           <div className="mb-5">
             <label
@@ -218,6 +218,7 @@ export const BookingForm = () => {
               onChange={(e) => setName(e.target.value)}
               className="bg-green-50 border border-green-500 text-green-900 dark:text-green-400 placeholder-green-700 dark:placeholder-green-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-600 dark:border-green-500 placeholder:text-gray-400 dark:placeholder:text-green-600"
               placeholder="Bonnie Green"
+              required
             />
           </div>
           <div className="mb-5">
@@ -234,6 +235,7 @@ export const BookingForm = () => {
               onChange={(e) => setMobile(e.target.value)}
               className="bg-green-50 border border-green-500 text-green-950 dark:text-green-400 placeholder-green-700 dark:placeholder-green-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-600 dark:border-green-500 placeholder:text-gray-400 dark:placeholder:text-green-600"
               placeholder="8888888888"
+              required
             />
           </div>
           <div className="mb-5">
@@ -254,7 +256,7 @@ export const BookingForm = () => {
               minDate={new Date()}
               isClearable
               className="bg-green-50 border border-green-500 text-green-900 dark:text-green-400 placeholder-green-700 dark:placeholder-green-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-600 dark:border-green-500 min-w-5/6 "
-              placeholder="Bonnie Green"
+              required
             />
           </div>
           <div
@@ -283,10 +285,14 @@ export const BookingForm = () => {
               ))}
             </div>
           </div>
-          <button type="submit">Book Service</button>
+          <div class="flex justify-center items-center">
+          <button
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+           type="submit">Book Service</button>
+           </div>
         </form>
       </div>
-      {bookingDetails && (
+      {/* {bookingDetails && (
         <div className="booking-details">
           <h4>Your Booking Details:</h4>
           <p>Name: {bookingDetails.name}</p>
@@ -294,7 +300,7 @@ export const BookingForm = () => {
           <p>Date: {bookingDetails.selectedDate}</p>
           <p>Time Slot: {bookingDetails.selectedTime}</p>
         </div>
-      )}
+      )} */}
     </main>
   );
 };

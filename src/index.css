@@ -3,9 +3,9 @@
 @tailwind utilities;
 main {
   /* margin: auto; */
-  min-height: 80vh;
+  min-height: 85vh;
   padding: 10px;
-  height: 82vh;
-  max-height: 82vh;
+  height: 86vh;
+  max-height: 95vh;
   width: full;
 }

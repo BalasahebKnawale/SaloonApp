@@ -21,7 +21,7 @@ export const ServiceList = () => {
         <div className="mb-6 text-center text-2xl font-bold text-black dark:text-white">
           Select Service
         </div>
-        <div className="flow-root  w-full m-auto p-4 bg-white dark:bg-gray-500 dark:text-gray-100 rounded-lg border-2 over">
+        <div className="flow-root  w-full m-auto p-4 bg-teal-50 dark:bg-gray-500 dark:text-gray-100 rounded-lg border-2 over">
           <ul
             className="divide-y divide-gray-200 dark:divide-gray-700"
           >
