@@ -60,7 +60,7 @@ export const BookingForm = () => {
       serviceEndsat,
     };
     try {
-      const d = await addDoc(collection(db, "bookings"), bookingData);
+      await addDoc(collection(db, "bookings"), bookingData);
       toast.success("Booking successful!", {
         onClose: () => {
           navigate("/");
