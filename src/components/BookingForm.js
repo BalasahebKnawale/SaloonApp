@@ -180,6 +180,7 @@ export const BookingForm = () => {
       }
     };
     slotuptate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedDate]);
 
   useEffect(() => {
@@ -190,6 +191,7 @@ export const BookingForm = () => {
         },
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
