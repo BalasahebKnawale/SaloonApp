@@ -26,9 +26,7 @@ import { router } from "./routes/router"; // Import the router configuration
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
-  </React.StrictMode>
+  <CartProvider>
+    <RouterProvider router={router} />
+  </CartProvider>
 );
