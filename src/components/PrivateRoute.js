@@ -6,7 +6,6 @@ export default function PrivateRoute({ role }) {
   if (checkingStatus) {
     return <Spinner />;
   }
-  console.log("user role is: ", loggedInrole);
 
   console.log(" required role is : ", role);
   if (!loggedIn || loggedInrole !== role) {
