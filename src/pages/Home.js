@@ -88,8 +88,12 @@ function Home() {
         <div className="lg: w-11/12 md:w-[750px] flex justify-around my-20 mx-auto gap-2">
           <Card
             className="lg:w-1/3 md:w-2/5 flex flex-col items-center justify-center text-center"
-            title="My Account"
+            title="My Bookings"
             icon={<FcBusinessman size={200} />} // Replace with your image URL
+            onClick={() => {
+              
+              return navigate("/userbooking");
+            }}
           />
           <Card
             className="lg:w-1/3 md:w-2/5 flex flex-col items-center justify-center"

@@ -8,6 +8,7 @@ import App from "../App"; // Assuming App is your layout component
 import Admin from "../pages/Admin";
 import Home from "../pages/Home";
 import ContactUs from "../pages/ContactUs ";
+import UserBookings from "../pages/UserBookings";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
           {
             path: "/services",
             element: <ServiceList />,
+          },
+          {
+            path: "/userbooking",
+            element: <UserBookings />
           },
         ],
       },

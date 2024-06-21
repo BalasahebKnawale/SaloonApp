@@ -10,6 +10,7 @@ import { addDoc, collection, getDocs, where } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { db } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 
 export const BookingForm = () => {
   const [name, setName] = useState("");
@@ -58,6 +59,7 @@ export const BookingForm = () => {
       selectedTime: selectedTime.join(", "),
       serviceStartsat,
       serviceEndsat,
+      userId: getAuth().currentUser.uid,
     };
     try {
       await addDoc(collection(db, "bookings"), bookingData);
