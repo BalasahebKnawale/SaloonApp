@@ -50,7 +50,7 @@ export const Login = () => {
   };
 
   return (
-    <main className="flex flex-col items-center justify-items-center  bg-gray-100 dark:bg-gray-600">
+    <main className="flex flex-col items-center justify-items-center  bg-gray-100 dark:bg-gray-600  h-[90vh] md:h-[88vh]">
       <div className="max-w-sm m-auto w-5/6">
         <h3 className="mb-6 text-center text-2xl font-bold text-black dark:text-white">
           Log in to your Account

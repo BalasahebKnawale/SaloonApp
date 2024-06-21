@@ -66,7 +66,7 @@ const UserBookings = () => {
   };
 
   return (
-    <main className="flex flex-col items-center justify-items-center bg-gray-100 dark:bg-gray-600 overflow-y-scroll">
+    <main className="flex flex-col items-center justify-items-center  h-[90vh] md:h-[88vh] bg-gray-100 dark:bg-gray-600 overflow-y-scroll">
       <div className="max-w-6xl w-5/6">
         <div className="mb-6 text-center text-2xl font-bold text-black dark:text-white">
           My Bookings

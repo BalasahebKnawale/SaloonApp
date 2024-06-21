@@ -16,15 +16,13 @@ export const ServiceList = () => {
   console.log(cartItems);
 
   return (
-    <main className="flex flex-col items-center justify-items-center  bg-gray-100 dark:bg-gray-600  overflow-y-scroll">
+    <main className="flex flex-col items-center justify-items-center  bg-gray-100 dark:bg-gray-600  overflow-y-scroll  h-[90vh] md:h-[88vh]">
       <div className="max-w-sm  w-5/6 ">
         <div className="mb-6 text-center text-2xl font-bold text-black dark:text-white">
           Select Service
         </div>
         <div className="flow-root  w-full m-auto p-4 bg-teal-50 dark:bg-gray-500 dark:text-gray-100 rounded-lg border-2 over">
-          <ul
-            className="divide-y divide-gray-200 dark:divide-gray-700"
-          >
+          <ul className="divide-y divide-gray-200 dark:divide-gray-700">
             {servicesList.map((category) => (
               <li key={category.category} className="py-3 sm:py-4">
                 <div

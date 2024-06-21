@@ -56,7 +56,7 @@ function Home() {
   };
 
   return (
-    <main className="flex flex-col items-center w-full h-full bg-gray-100 dark:bg-gray-600 p-4 overflow-y-auto">
+    <main className="flex flex-col items-center w-full h-[90vh] md:h-[88vh]  bg-gray-100 dark:bg-gray-600 p-4 overflow-y-auto">
       <h3 className="mb-6 text-center text-2xl font-bold text-black dark:text-white">
         Welcome to My Salon
       </h3>
