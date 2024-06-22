@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { BookingCart } from "../components/BookingCart";
 import { useApi } from "../hooks/useApi";
+import { toast } from "react-toastify";
+import { deleteDoc, doc } from "firebase/firestore";
+import { db } from "../firebase/firebase";
 
 export function Allapointments() {
   const [bookingDate, setBookingDate] = useState("");
@@ -72,6 +75,27 @@ export function Allapointments() {
     console.log("Booking day clicked:", selectedDate);
     console.log("All bookings for the selected day:", booking[0].selectedDate);
   };
+  const handleCancel = ({ id }) => {
+    console.log("Cancelling booking with id:", id);
+    if (!id) {
+      console.error("Booking id is undefined");
+      toast.error("Something went wrong! Booking ID is missing.");
+      return;
+    }
+
+    const bookingRef = doc(db, "bookings", id);
+    deleteDoc(bookingRef)
+      .then(() => {
+        toast.warn("Booking cancelled successfully");
+        console.log("Booking deleted successfully");
+        // Remove the cancelled booking from the state
+        setAllbookings((prev) => prev.filter((booking) => booking.id !== id));
+      })
+      .catch((error) => {
+        toast.error("Something went wrong!");
+        console.log("Error deleting booking:", error);
+      });
+  };
 
   return (
     <main className="flex flex-col items-center justify-items-center bg-gray-100 dark:bg-gray-600 overflow-y-scroll  h-[90vh] md:h-[88vh]">
@@ -95,6 +119,7 @@ export function Allapointments() {
                       key={booking.id}
                       booking={booking}
                       bgColor={bgColors[index % bgColors.length]}
+                      handleCancel={handleCancel}
                     />
                   ))}
                 </div>

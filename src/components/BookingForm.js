@@ -76,7 +76,6 @@ export const BookingForm = () => {
       });
     }
 
-
     console.log(bookingData);
   };
   const setTimehandler = (slot, totalTime) => {
@@ -237,6 +236,7 @@ export const BookingForm = () => {
               onChange={(e) => setMobile(e.target.value)}
               className="bg-green-50 border border-green-500 text-green-950 dark:text-green-400 placeholder-green-700 dark:placeholder-green-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-600 dark:border-green-500 placeholder:text-gray-400 dark:placeholder:text-green-600"
               placeholder="8888888888"
+              maxLength={10}
               required
             />
           </div>
@@ -288,10 +288,13 @@ export const BookingForm = () => {
             </div>
           </div>
           <div class="flex justify-center items-center">
-          <button
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700"
-           type="submit">Book Service</button>
-           </div>
+            <button
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+              type="submit"
+            >
+              Book Service
+            </button>
+          </div>
         </form>
       </div>
       {/* {bookingDetails && (
