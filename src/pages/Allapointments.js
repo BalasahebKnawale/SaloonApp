@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BookingCart } from "../components/BookingCart";
 import { useApi } from "../hooks/useApi";
 import { toast } from "react-toastify";
-import { deleteDoc, doc } from "firebase/firestore";
+import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 
 export function Allapointments() {
@@ -41,6 +41,7 @@ export function Allapointments() {
               serviceStartsat: doc.data().serviceStartsat,
               serviceEndsat: doc.data().serviceEndsat,
               serviceName: doc.data().serviceName,
+              status: doc.data().status,
             }));
           setAllbookings(bookings);
         }
@@ -97,6 +98,35 @@ export function Allapointments() {
       });
   };
 
+  const handleUpdateStatus = ({ bookingId, status }) => {
+    console.log("Updating booking status:", bookingId, status);
+    if (!bookingId) {
+      console.error("Booking id is undefined");
+      toast.error("Something went wrong! Booking ID is missing.");
+      return;
+    } else {
+      const bookingRef = doc(db, "bookings", bookingId);
+      updateDoc(bookingRef, { status: status })
+        .then(() => {
+          toast.success("Booking status updated successfully");
+          console.log("Booking status updated successfully");
+
+          // Update the booking status in the state
+          setAllbookings((prev) =>
+            prev.map((booking) =>
+              booking.id === bookingId
+                ? { ...booking, status: status }
+                : booking
+            )
+          );
+        })
+        .catch((error) => {
+          toast.error("Something went wrong!");
+          console.log("Error updating booking status:", error);
+        });
+    }
+  };
+
   return (
     <main className="flex flex-col items-center justify-items-center bg-gray-100 dark:bg-gray-600 overflow-y-scroll  h-[90vh] md:h-[88vh]">
       <div className="max-w-6xl w-5/6">
@@ -120,6 +150,7 @@ export function Allapointments() {
                       booking={booking}
                       bgColor={bgColors[index % bgColors.length]}
                       handleCancel={handleCancel}
+                      handleUpdateStatus={handleUpdateStatus}
                     />
                   ))}
                 </div>
